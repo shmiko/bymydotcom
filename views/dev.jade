@@ -1,0 +1,46 @@
+.page
+	b #{title}, #{appName} v.#{version}
+	p= user.name
+	br
+	br
+	//a.button(href='/login') Login/Logout
+	p
+	a.button(href='/users/new') Register
+	p
+	a.button(href='/dev/upload') Upload images
+	p
+	b Users
+	ul
+		label Using "/users.:format?"
+		li: a(href='/users.json') All users json (later need to add filter)
+		li: a(href='/users') All users (later need to add filter)
+	script function userByIdJSON() { location.href = '/users/'+ document.getElementById('user_id').value + ".json"}
+	script function userById() { location.href = '/users/'+ document.getElementById('user_id').value}
+	script function editUserById() { location.href = '/users/'+ document.getElementById('user_id').value+'/edit'}
+	script function delUserById() { location.href = '/users/'+ document.getElementById('user_id').value'}
+	script function updateUserById() { location.href = '/users/'+ document.getElementById('user_id').value'}
+	input(type='text', id='user_id', size='90')
+	button(onClick= 'userByIdJSON()') show user by ID	(JSON)
+	button(onClick= 'userById()') show user by ID (user.jade)
+	button(onClick= 'editUserById()') show/edit user by ID (edit_user.jade)
+	button(onClick= 'delUserById()') delete user by ID
+	button(onClick= 'updateUserById()') update user by ID
+	br	
+	br	
+	b Items	
+	ul	
+		li: a(href='/items') all items json
+		li: a(href='/items/new') new item
+		script function itemById() { location.href = '/items/'+ document.getElementById('item_id').value }
+		input(type='text', id='item_id', size='90')
+		button(onClick= 'itemById()') show item by id
+	b Categories	
+	ul	
+		li: a(href='/categories.json') all categories json
+		li: a(href='/categories/new') new category
+		script function categoryById() { location.href = '/categories/'+ document.getElementById('category_id').value }
+		input(type='text', id='category_id', size='90')
+		button(onClick= 'categoryById()') show category by ID
+	b Others	
+		li: a(href='/about') about us
+	

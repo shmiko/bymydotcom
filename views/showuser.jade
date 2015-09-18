@@ -1,0 +1,82 @@
+extends layout
+
+block content
+	#user-page
+		script#lot-item(type = "text/template")
+			<section class="lot-admin">
+			<img class="lot-image" src="/i/lots/<%= lot.picture %>" alt="lot image">
+			<a href="/items/<%= lot._id %>">
+			<h3 class="lot-title">
+			<%= lot.name %>
+			</h3>
+			</a>
+			<div class="lot-actions">
+			<a href="/items/<%= lot._id %>/start">start exchange</a>
+			<a href="/items/<%= lot._id %>/stop">stop exchange</a>
+			<a href="/items/<%= lot._id %>/done">exchanged</a>
+			<a href="/items/<%= lot._id %>/add-photo">add photo</a>
+			<a href="javascript:void(0);">edit</a>
+			<a href="javascript:void(0);" class="delete-lot-trigger" data-lot-id="<%= lot._id %>">delete</a>
+			</div>
+			</section>
+		div.user-ava
+			if user.picture
+				if user.picture.indexOf('http://') != -1 
+					img(src='#{user.picture}', alt='avatar')
+				else 	
+					img(src='/i/users/#{user.picture}', alt='avatar')
+			else
+				img(src='/i/users/default.png', alt='dummy avatar')
+		div.user-info
+			h1= user.name
+			div.user-meta
+				p= user._id
+				p= user.email
+				p= user.phone
+				p= user.location
+				p= user.photo
+		div.clr
+
+		a.add-new-lot-trigger(href="javascript:void(0)").pull-right [Add New Lot]
+		div.clr
+		//- object lots array imitation
+		//lots = [{id:'50b53dbe9e06216217000006', main_image:'/stylesheets/i/iphone.jpg', name:'iphone'},{id:'2', main_image:'/stylesheets/i/samsung.jpg', name:'samsung'},{id:'3', main_image:'/stylesheets/i/motorola.jpg', name:'motorola'}]
+		//- end of object
+		section.lot-admin-new
+			form#new-item(action='', method='POST')
+				fieldset
+					legend Create a New Lot
+					label name Lot
+					input.lot-name(type="text", name="item[name]")
+					br
+					p.lot-desc-title Description Lot
+					textarea.lot-desc(name="item[description]")
+					br
+					label Estimated cost
+					input.lot-value(type="number", name="item[value]")
+					br
+					p.lot-wish-title Request to share
+					textarea.lot-wish(name="item[wish]")
+					br
+					label Lot Category
+					select.lot-category(name="item[category_id]")
+						option(value="50b3db132bdf12cb09000010") Home
+					button.create-lot-trigger.btn.btn-primary(type='button') Create
+					a.cancel-lot-trigger.btn.btn-warning Cancel
+		section.user-lots-admin
+	script(type="text/javascript")
+		lots = !{ JSON.stringify(lots) };
+
+//		- for lot in lots
+//			section.user-lots-admin
+//				section.lot-admin
+//					img.lot-image(src='#{lot.picture}', alt='lot image')
+//					a(href='/items/' + lot._id)
+//						h3.lot-title= lot.name
+//					div.lot-actions
+//						a(href='/items/start/' + lot._id) start exchange
+//						a(href='/items/stop/' + lot._id) stop exchange
+//						a(href='/items/done/' + lot._id) exchanged
+//						a(href='/items/add-photo/' + lot._id) add photo
+//						a(href='/items/' + lot._id + '/edit') edit
+//						a(href='/items/del/' + lot._id) delete

@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	script#lot-item(type = "text/template")
+			<section class="lot-admin">
+			<img class="lot-image" src="/i/lots/<%= lot.picture %>" alt="lot image">
+			<a href="/items/<%= lot._id %>">
+			<h3 class="lot-title">
+			<%= lot.name %>
+			</h3>
+			</a>
+			</section>
+	#search-page.container
+		.row
+			.span12
+				form#search-main(method='get', action='/items')
+					fieldset
+						legend Розширений пошук
+						label
+							strong
+								Текст для пошуку
+						input(type='text', name='text', placeholder='Тескт для пошуку')
+						label
+							strong
+								Пошук у побажаннях
+						input(type='text', name='wish', placeholder='Пошук у побажаннях')
+						label
+							strong
+								Грошовий еквівалент
+						label від
+						input(type='text', name='valueGte', placeholder='0.00')
+						label до
+						input(type='text', name='valueLte', placeholder='0.00')
+						label
+							strong
+								Дата закінчення аукціону
+						label від
+						input(type='text', name='startDate', placeholder='хх-хх-хххх')
+						label до
+						input(type='text', name='startDate', placeholder='хх-хх-хххх')
+						button.search-button-main.btn.btn-large.btn-block.btn-primary(type='submit') Пошук
+		.row
+			.span12
+				.search-results
