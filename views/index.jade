@@ -7,35 +7,35 @@ block content
 				.main-categories-menu
 					ul.all-categories
 						li.all-category.first
-							a.ac-link.cat-books(href='javascript:;') Книги
+							a.ac-link.cat-books(href='javascript:;') Book
 						li.all-category
-							a.ac-link.cat-pcs(href='javascript:;') Комп`ютери
+							a.ac-link.cat-pcs(href='javascript:;') Computers
 						li.all-category
-							a.ac-link.cat-phones(href='javascript:;') Телефони, смартфони
+							a.ac-link.cat-phones(href='javascript:;') Phones, smartphones
 						li.all-category
-							a.ac-link.cat-technics(href='javascript:;') Техніка, електроніка
+							a.ac-link.cat-technics(href='javascript:;') Technology, Electronics
 						li.all-category
-							a.ac-link.cat-fasion(href='javascript:;') Мода, краса
+							a.ac-link.cat-fasion(href='javascript:;') Fashion & Beauty
 						li.all-category
-							a.ac-link.cat-cds(href='javascript:;') Диски
+							a.ac-link.cat-cds(href='javascript:;') Disks
 						li.all-category
-							a.ac-link.cat-home(href='javascript:;') Все для дому
+							a.ac-link.cat-home(href='javascript:;') Everything for the home
 						li.all-category
-							a.ac-link.cat-kids(href='javascript:;') Для дітей
+							a.ac-link.cat-kids(href='javascript:;') For children
 						li.all-category
-							a.ac-link.cat-rest(href='javascript:;') Дозвілля, відпочинок
+							a.ac-link.cat-rest(href='javascript:;') Leisure, recreation
 						li.all-category
-							a.ac-link.cat-collect(href='javascript:;') Колекціонування
+							a.ac-link.cat-collect(href='javascript:;') Collecting
 						li.all-category
-							a.ac-link.cat-avto(href='javascript:;') Авто, мото
+							a.ac-link.cat-avto(href='javascript:;') Auto, motorcycle
 						li.all-category.last
-							a.ac-link.cat-other(href='javascript:;') Різне
-			h5.adv-header Реклама:
+							a.ac-link.cat-other(href='javascript:;') Other
+			h5.adv-header advertising:
 			.adv-wrapper
 				img.adv(src='/i/adv_demo.jpg')
-			h3.soc-header Ми у соціальних мережах:
+			h3.soc-header We in social networks:
 			a.vnv-f(href='https://www.facebook.com/groups/vsenavse/') Facebook
-			a.vnv-vk(href='https://vk.com/vsenavse_com_ua') ВКонтакте
+			a.vnv-vk(href='https://vk.com/vsenavse_com_ua') In contact with
 		.main-content(ng-controller='indexCtrl')
 			.lot-wrapper.ng-cloak(ng-repeat='lot in lots', ng-class='{forth: !(($index+1)%4) && !$first }')
 				a.lot-image-link(href='javascript:;', ng-class='{closehome: lot.closeHome, gift: lot.gift}')
@@ -43,7 +43,7 @@ block content
 				a.lot-link(href='javascript:;') {{ lot.title }}
 			.clearfix
 			.lots-finish
-			h3.latest-exchanges-header Останні успішні обміни:
+			h3.latest-exchanges-header Last successful exchanges:
 			.exchange-wrapper.ng-cloak(ng-repeat='exchange in exchanges', ng-class='{third: !(($index+1)%3) && !$first }')
 				.lot1-wrapper
 					a.ex-lot-image-link
