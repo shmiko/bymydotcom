@@ -15,15 +15,15 @@ block content
 				p.phone= user.phone
 				p= user._id
 		section.top-right
-			a.pull-right(href='javascript:void()') [Редагувати]
+			a.pull-right(href='javascript:void()') [edit]
 			h1.lot-title= item.name
 			h3.value 100$
 			//h5.period= lot.period_formatted
 			section.lot-desc
-				h5.desc-title Опис лоту
+				h5.desc-title Description Lot
 				p.desc= item.description
 			section.lot-wishes
-				h5.wishes-title Побажання до обміну
+				h5.wishes-title Request to share
 				p.wishes lot wishes will be here
 		div.clr
 		section.bottom-left
@@ -32,7 +32,7 @@ block content
 			section.ad-banner
 				img(src='/i/lots/kosheljok.jpg', alt='banner')
 		section.bottom-right
-			h3.disc-title Пропозиції
+			h3.disc-title Offers
 			section.discussion
 				- var i = 0
 				if item.offers
@@ -42,5 +42,5 @@ block content
 							p= topic.description
 						- i++
 				else
-					p Обговорень ще не було
-				a.pull-right(href='javascript:void()') [Запропонувати]
+					p Discussion has not yet been
+				a.pull-right(href='javascript:void()') [offer]
