@@ -5,7 +5,7 @@
 
 angular.module('myApp.directives', []).
 	directive('mainSearch', function(version) {
-		var categories = ['Книги', 'Комп`ютери', 'Телефони, смартфони', 'Техника, електроніка', 'Мода, краса', 'Диски', 'Все для дому', 'Для дітей', 'Дозвілля, відпочинок', 'Колекціонування', 'Авто, мото', 'Різне'];
+		var categories = ['book', 'Computers', 'Phones, smartphones', 'Technique Electronics', 'Fashion & Beauty', 'Disks', 'Everything for the home', 'For children', 'Leisure, recreation', 'Collecting', 'Auto, motorcycle', 'Other'];
 		var selected = '';
 		return {
 			restrict: 'A',
