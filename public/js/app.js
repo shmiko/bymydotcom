@@ -7,5 +7,5 @@ angular.module('vsenavseApp', ['myApp.filters', 'myApp.services', 'myApp.directi
 	
 	}])
 	.run(function() {
-		console.log('vse na vse app initing !')
+		console.log('All in all the app initing !')
 	});
